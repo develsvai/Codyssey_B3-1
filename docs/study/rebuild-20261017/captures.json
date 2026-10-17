@@ -1,0 +1,1265 @@
+[
+  {
+    "name": "03-vpc-start",
+    "title": "01 VPC 메뉴에서 시작하기",
+    "at": "2026-10-17T09:11:04.354Z",
+    "raw": "raw/03-vpc-start.png",
+    "explained": "explained/03-vpc-start.png",
+    "notes": [
+      {
+        "caption": "VPC부터 만들어요. 서버를 놓을 전용 네트워크 공간이에요.",
+        "anchor": {
+          "x": 270,
+          "y": 114,
+          "w": 90.8671875,
+          "h": 28
+        }
+      }
+    ],
+    "heading": "VPC 메뉴에서 시작하기",
+    "chapter": "VPC와 서브넷",
+    "action": "서울 리전에서 VPC 서비스로 이동하고 VPC 생성을 누른다."
+  },
+  {
+    "name": "04-vpc-create-choice",
+    "title": "02 VPC만 선택하기",
+    "at": "2026-10-17T09:11:34.122Z",
+    "raw": "raw/04-vpc-create-choice.png",
+    "explained": "explained/04-vpc-create-choice.png",
+    "notes": [
+      {
+        "caption": "VPC만 먼저 만들어요. 서브넷과 인터넷 연결은 다음 단계에서 하나씩 구성해요.",
+        "anchor": {
+          "x": 74,
+          "y": 282,
+          "w": 16,
+          "h": 16
+        }
+      }
+    ],
+    "heading": "VPC만 선택하기",
+    "chapter": "VPC와 서브넷",
+    "action": "생성할 리소스에서 VPC만을 선택한다. 나머지는 다음 단계에서 직접 연결한다."
+  },
+  {
+    "name": "05-vpc-name-cidr",
+    "title": "03 VPC 이름과 주소 범위",
+    "at": "2026-10-17T09:11:54.437Z",
+    "raw": "raw/05-vpc-name-cidr.png",
+    "explained": "explained/05-vpc-name-cidr.png",
+    "notes": [
+      {
+        "caption": "다른 사람의 자원과 구분할 수 있도록 실습 이름을 붙여요.",
+        "anchor": {
+          "x": 37,
+          "y": 357,
+          "w": 639.5234375,
+          "h": 28
+        }
+      },
+      {
+        "caption": "10.77.0.0/16은 VPC 내부에서 사용할 큰 주소 범위예요.",
+        "anchor": {
+          "x": 37,
+          "y": 507,
+          "w": 639.5234375,
+          "h": 28
+        }
+      }
+    ],
+    "heading": "VPC 이름과 주소 범위",
+    "chapter": "VPC와 서브넷",
+    "action": "이름 codyssey-haru2-study-vpc, IPv4 CIDR 10.77.0.0/16을 입력한다. IPv6 없음과 기본 테넌시를 유지한다."
+  },
+  {
+    "name": "06-vpc-tags-before-create",
+    "title": "04 소유 태그와 생성 직전 확인",
+    "at": "2026-10-17T09:12:21.964Z",
+    "raw": "raw/06-vpc-tags-before-create.png",
+    "explained": "explained/06-vpc-tags-before-create.png",
+    "notes": [
+      {
+        "caption": "Project는 이 자원이 어떤 과제에 속하는지 구분해요.",
+        "anchor": {
+          "x": 37,
+          "y": 689,
+          "w": 352.7265625,
+          "h": 28
+        }
+      },
+      {
+        "caption": "Owner로 내 실습 자원을 구분해요. 이번 권한 정책에서도 사용하는 값이에요.",
+        "anchor": {
+          "x": 405.7265625,
+          "y": 733,
+          "w": 352.734375,
+          "h": 28
+        }
+      }
+    ],
+    "heading": "소유 태그와 생성 직전 확인",
+    "chapter": "VPC와 서브넷",
+    "action": "Project=Codyssey-B3-1, Owner=Haru2_freetier_iam_user를 추가하고 VPC 생성을 누른다. 이 값은 이번 IAM 정책의 생성 조건이다."
+  },
+  {
+    "name": "07b-vpc-created",
+    "title": "05 VPC 생성 결과 확인",
+    "at": "2026-10-17T09:13:09.437Z",
+    "raw": "raw/07b-vpc-created.png",
+    "explained": "explained/07b-vpc-created.png",
+    "notes": [
+      {
+        "caption": "Available이면 VPC를 사용할 준비가 된 상태예요.",
+        "anchor": {
+          "x": 568.25,
+          "y": 313,
+          "w": 256.25,
+          "h": 20
+        }
+      },
+      {
+        "caption": "입력한 주소 범위가 그대로 적용됐는지 확인해요.",
+        "anchor": {
+          "x": 857.5,
+          "y": 425,
+          "w": 256.25,
+          "h": 20
+        }
+      }
+    ],
+    "heading": "VPC 생성 결과 확인",
+    "chapter": "VPC와 서브넷",
+    "action": "VPC 상태 Available과 IPv4 CIDR을 확인한다. 이 단계만으로 인터넷에 연결되는 것은 아니다."
+  },
+  {
+    "name": "08-subnet-list",
+    "title": "06 서브넷 만들기 시작",
+    "at": "2026-10-17T09:13:22.117Z",
+    "raw": "raw/08-subnet-list.png",
+    "explained": "explained/08-subnet-list.png",
+    "notes": [
+      {
+        "caption": "서브넷은 VPC의 주소 범위를 나눈 작은 구역이에요.",
+        "anchor": {
+          "x": 1323.359375,
+          "y": 97,
+          "w": 100.640625,
+          "h": 28
+        }
+      }
+    ],
+    "heading": "서브넷 만들기 시작",
+    "chapter": "VPC와 서브넷",
+    "action": "왼쪽 서브넷 메뉴에서 서브넷 생성을 누른다."
+  },
+  {
+    "name": "09c-subnet-vpc-choice",
+    "title": "07 이번 VPC를 선택",
+    "at": "2026-10-17T09:14:50.004Z",
+    "raw": "raw/09c-subnet-vpc-choice.png",
+    "explained": "explained/09c-subnet-vpc-choice.png",
+    "notes": [
+      {
+        "caption": "앞에서 만든 VPC의 이름과 주소 범위를 확인하고 선택해요.",
+        "anchor": {
+          "x": 37,
+          "y": 412,
+          "w": 905.328125,
+          "h": 50
+        }
+      }
+    ],
+    "heading": "이번 VPC를 선택",
+    "chapter": "VPC와 서브넷",
+    "action": "기본 VPC 대신 방금 만든 codyssey-haru2-study-vpc를 선택한다."
+  },
+  {
+    "name": "11-subnet-settings",
+    "title": "08 서브넷 위치와 주소 범위",
+    "at": "2026-10-17T09:15:19.883Z",
+    "raw": "raw/11-subnet-settings.png",
+    "explained": "explained/11-subnet-settings.png",
+    "notes": [
+      {
+        "caption": "서브넷은 하나의 가용 영역에 속해요. 이번에는 서울의 2a를 골라요.",
+        "anchor": {
+          "x": 53,
+          "y": 360.96875,
+          "w": 884.6640625,
+          "h": 28
+        }
+      },
+      {
+        "caption": "10.77.1.0/24는 VPC 주소 범위 안에 있는 작은 구역이에요.",
+        "anchor": {
+          "x": 60,
+          "y": 517.96875,
+          "w": 802.703125,
+          "h": 22
+        }
+      }
+    ],
+    "heading": "서브넷 위치와 주소 범위",
+    "chapter": "VPC와 서브넷",
+    "action": "서브넷 이름 codyssey-haru2-study-public, 가용 영역 ap-northeast-2a, CIDR 10.77.1.0/24를 입력한다."
+  },
+  {
+    "name": "12-subnet-tags-create",
+    "title": "09 서브넷 태그와 생성",
+    "at": "2026-10-17T09:15:54.234Z",
+    "raw": "raw/12-subnet-tags-create.png",
+    "explained": "explained/12-subnet-tags-create.png",
+    "notes": [
+      {
+        "caption": "서브넷에도 같은 소유 태그를 넣어요. 내 실습 자원을 구분하는 기준이에요.",
+        "anchor": {
+          "x": 559.625,
+          "y": 640.96875,
+          "w": 490.625,
+          "h": 28
+        }
+      }
+    ],
+    "heading": "서브넷 태그와 생성",
+    "chapter": "VPC와 서브넷",
+    "action": "VPC와 같은 Project와 Owner 태그를 넣고 서브넷 생성을 누른다."
+  },
+  {
+    "name": "13c-subnet-confirmed",
+    "title": "13 · 서브넷 주소 범위 재확인",
+    "at": "2026-10-17T10:13:06.254Z",
+    "raw": "raw/13c-subnet-confirmed.png",
+    "explained": "explained/13c-subnet-confirmed.png",
+    "notes": [
+      {
+        "caption": "서브넷 주소 범위가 VPC의 10.77.0.0/16 안에 포함되는지 확인해요.",
+        "anchor": {
+          "x": 730,
+          "y": 250,
+          "w": 220,
+          "h": 33
+        }
+      }
+    ],
+    "heading": "서브넷 주소 범위 재확인",
+    "chapter": "VPC와 서브넷",
+    "action": "생성된 서브넷 주소를 확인한다. 이 확인 화면은 EC2 생성 후 다시 촬영했다."
+  },
+  {
+    "name": "14-igw-list",
+    "title": "11 인터넷 게이트웨이 만들기",
+    "at": "2026-10-17T09:16:46.320Z",
+    "raw": "raw/14-igw-list.png",
+    "explained": "explained/14-igw-list.png",
+    "notes": [
+      {
+        "caption": "VPC와 인터넷을 연결할 게이트웨이를 만들어요.",
+        "anchor": {
+          "x": 1258.71875,
+          "y": 177,
+          "w": 165.28125,
+          "h": 28
+        }
+      }
+    ],
+    "heading": "인터넷 게이트웨이 만들기",
+    "chapter": "인터넷 경로 연결",
+    "action": "인터넷 게이트웨이 메뉴에서 인터넷 게이트웨이 생성을 누른다."
+  },
+  {
+    "name": "15-igw-before-create",
+    "title": "12 인터넷 게이트웨이 입력",
+    "at": "2026-10-17T09:17:07.381Z",
+    "raw": "raw/15-igw-before-create.png",
+    "explained": "explained/15-igw-before-create.png",
+    "notes": [
+      {
+        "caption": "VPC와 구분되는 이름을 붙여요. 생성한 다음 VPC에 연결할 거예요.",
+        "anchor": {
+          "x": 37,
+          "y": 333,
+          "w": 900,
+          "h": 28
+        }
+      }
+    ],
+    "heading": "인터넷 게이트웨이 입력",
+    "chapter": "인터넷 경로 연결",
+    "action": "이름 codyssey-haru2-study-igw와 같은 Project·Owner 태그를 넣고 생성한다."
+  },
+  {
+    "name": "16b-igw-detached",
+    "title": "13 아직 VPC에 연결하지 않은 상태",
+    "at": "2026-10-17T09:17:28.003Z",
+    "raw": "raw/16b-igw-detached.png",
+    "explained": "explained/16b-igw-detached.png",
+    "notes": [
+      {
+        "caption": "Detached는 아직 VPC에 붙이지 않았다는 뜻이에요. 다음으로 연결해요.",
+        "anchor": {
+          "x": 568.25,
+          "y": 312,
+          "w": 256.25,
+          "h": 20
+        }
+      }
+    ],
+    "heading": "아직 VPC에 연결하지 않은 상태",
+    "chapter": "인터넷 경로 연결",
+    "action": "처음에는 Detached로 표시된다. 게이트웨이를 만든 뒤 VPC에 붙이는 작업이 따로 필요하다."
+  },
+  {
+    "name": "17b-igw-attach-menu",
+    "title": "14 작업 메뉴에서 VPC 연결",
+    "at": "2026-10-17T09:17:43.600Z",
+    "raw": "raw/17b-igw-attach-menu.png",
+    "explained": "explained/17b-igw-attach-menu.png",
+    "notes": [
+      {
+        "caption": "작업 메뉴에서 VPC에 연결을 선택해요.",
+        "anchor": {
+          "x": 1287.03125,
+          "y": 236,
+          "w": 136.96875,
+          "h": 32
+        }
+      }
+    ],
+    "heading": "작업 메뉴에서 VPC 연결",
+    "chapter": "인터넷 경로 연결",
+    "action": "이번 게이트웨이를 선택하고 작업 → VPC에 연결을 누른다."
+  },
+  {
+    "name": "19-igw-attach-confirm",
+    "title": "15 연결할 VPC 확인",
+    "at": "2026-10-17T09:18:08.792Z",
+    "raw": "raw/19-igw-attach-confirm.png",
+    "explained": "explained/19-igw-attach-confirm.png",
+    "notes": [
+      {
+        "caption": "이 게이트웨이를 이번 study-vpc에 붙여요. 이름과 ID를 확인해요.",
+        "anchor": {
+          "x": 37,
+          "y": 251,
+          "w": 900,
+          "h": 28
+        }
+      }
+    ],
+    "heading": "연결할 VPC 확인",
+    "chapter": "인터넷 경로 연결",
+    "action": "codyssey-haru2-study-vpc를 선택하고 인터넷 게이트웨이 연결을 누른다."
+  },
+  {
+    "name": "20-igw-attached",
+    "title": "16 VPC 연결 완료",
+    "at": "2026-10-17T09:18:21.061Z",
+    "raw": "raw/20-igw-attached.png",
+    "explained": "explained/20-igw-attached.png",
+    "notes": [
+      {
+        "caption": "Attached로 바뀌면 VPC와 게이트웨이 연결이 완료된 거예요.",
+        "anchor": {
+          "x": 568.25,
+          "y": 312,
+          "w": 256.25,
+          "h": 20
+        }
+      }
+    ],
+    "heading": "VPC 연결 완료",
+    "chapter": "인터넷 경로 연결",
+    "action": "상태가 Attached이고 연결된 VPC가 맞는지 확인한다."
+  },
+  {
+    "name": "21-route-table-list",
+    "title": "17 라우팅 테이블 만들기",
+    "at": "2026-10-17T09:18:34.098Z",
+    "raw": "raw/21-route-table-list.png",
+    "explained": "explained/21-route-table-list.png",
+    "notes": [
+      {
+        "caption": "목적지 주소에 따라 트래픽을 어디로 보낼지 정하는 규칙표예요.",
+        "anchor": {
+          "x": 1283.078125,
+          "y": 182,
+          "w": 140.921875,
+          "h": 28
+        }
+      }
+    ],
+    "heading": "라우팅 테이블 만들기",
+    "chapter": "인터넷 경로 연결",
+    "action": "라우팅 테이블 메뉴에서 라우팅 테이블 생성을 누른다."
+  },
+  {
+    "name": "22-route-vpc-choice",
+    "title": "18 라우팅 테이블의 VPC 선택",
+    "at": "2026-10-17T09:18:57.034Z",
+    "raw": "raw/22-route-vpc-choice.png",
+    "explained": "explained/22-route-vpc-choice.png",
+    "notes": [
+      {
+        "caption": "경로를 적용할 VPC를 선택해요. 이번 study-vpc를 골라요.",
+        "anchor": {
+          "x": 37,
+          "y": 419,
+          "w": 905.328125,
+          "h": 34
+        }
+      }
+    ],
+    "heading": "라우팅 테이블의 VPC 선택",
+    "chapter": "인터넷 경로 연결",
+    "action": "라우팅 테이블이 속할 VPC로 codyssey-haru2-study-vpc를 선택한다."
+  },
+  {
+    "name": "23-route-table-before-create",
+    "title": "19 라우팅 테이블 생성",
+    "at": "2026-10-17T09:18:58.274Z",
+    "raw": "raw/23-route-table-before-create.png",
+    "explained": "explained/23-route-table-before-create.png",
+    "notes": [
+      {
+        "caption": "퍼블릭 서브넷에서 사용할 규칙표라는 뜻으로 이름을 붙였어요.",
+        "anchor": {
+          "x": 37,
+          "y": 253,
+          "w": 905.328125,
+          "h": 28
+        }
+      }
+    ],
+    "heading": "라우팅 테이블 생성",
+    "chapter": "인터넷 경로 연결",
+    "action": "이름 codyssey-haru2-study-public-rt와 같은 Project·Owner 태그를 넣고 생성한다."
+  },
+  {
+    "name": "24b-route-local-only",
+    "title": "20 처음에는 내부 경로만 존재",
+    "at": "2026-10-17T09:19:19.748Z",
+    "raw": "raw/24b-route-local-only.png",
+    "explained": "explained/24b-route-local-only.png",
+    "notes": [
+      {
+        "caption": "local은 VPC 내부로 가는 경로예요. 인터넷으로 나가는 경로를 추가할 거예요.",
+        "anchor": {
+          "x": 503,
+          "y": 559,
+          "w": 225,
+          "h": 33
+        }
+      }
+    ],
+    "heading": "처음에는 내부 경로만 존재",
+    "chapter": "인터넷 경로 연결",
+    "action": "라우팅 탭을 연다. 처음에는 VPC 내부용 local 경로만 있다."
+  },
+  {
+    "name": "25-route-add",
+    "title": "21 기본 경로 추가 시작",
+    "at": "2026-10-17T09:19:30.497Z",
+    "raw": "raw/25-route-add.png",
+    "explained": "explained/25-route-add.png",
+    "notes": [
+      {
+        "caption": "기존 local 경로는 두고 외부 목적지에 사용할 경로를 추가해요.",
+        "anchor": {
+          "x": 37,
+          "y": 254,
+          "w": 100.640625,
+          "h": 28
+        }
+      }
+    ],
+    "heading": "기본 경로 추가 시작",
+    "chapter": "인터넷 경로 연결",
+    "action": "라우팅 편집 → 라우팅 추가를 누른다."
+  },
+  {
+    "name": "26b-route-target-type",
+    "title": "22 인터넷 연결 대상 선택",
+    "at": "2026-10-17T09:20:39.809Z",
+    "raw": "raw/26b-route-target-type.png",
+    "explained": "explained/26b-route-target-type.png",
+    "notes": [
+      {
+        "caption": "대상 유형에서 인터넷 게이트웨이를 선택해요.",
+        "anchor": {
+          "x": 382.5,
+          "y": 419,
+          "w": 329.5,
+          "h": 32
+        }
+      }
+    ],
+    "heading": "인터넷 연결 대상 선택",
+    "chapter": "인터넷 경로 연결",
+    "action": "대상 유형으로 인터넷 게이트웨이를 고른다."
+  },
+  {
+    "name": "28-route-settings",
+    "title": "23 기본 경로 설정 확인",
+    "at": "2026-10-17T09:21:37.180Z",
+    "raw": "raw/28-route-settings.png",
+    "explained": "explained/28-route-settings.png",
+    "notes": [
+      {
+        "caption": "0.0.0.0/0은 더 구체적인 경로가 없는 외부 IPv4 목적지에 쓰는 기본 경로예요.",
+        "anchor": {
+          "x": 37,
+          "y": 237,
+          "w": 329.5,
+          "h": 28
+        }
+      },
+      {
+        "caption": "방금 VPC에 연결한 인터넷 게이트웨이로 보내도록 설정했어요.",
+        "anchor": {
+          "x": 382.5,
+          "y": 273,
+          "w": 329.5,
+          "h": 28
+        }
+      }
+    ],
+    "heading": "기본 경로 설정 확인",
+    "chapter": "인터넷 경로 연결",
+    "action": "목적지 0.0.0.0/0, 대상은 이번 게이트웨이로 지정하고 저장한다. 이 화면은 저장한 설정을 다시 열어 확인한 모습이다."
+  },
+  {
+    "name": "30-route-subnet-tab",
+    "title": "24 경로를 서브넷에 적용하기",
+    "at": "2026-10-17T09:21:54.649Z",
+    "raw": "raw/30-route-subnet-tab.png",
+    "explained": "explained/30-route-subnet-tab.png",
+    "notes": [
+      {
+        "caption": "규칙표를 만들었으니, 어느 서브넷에서 사용할지 연결해요.",
+        "anchor": {
+          "x": 1274.2578125,
+          "y": 424,
+          "w": 128.7421875,
+          "h": 28
+        }
+      }
+    ],
+    "heading": "경로를 서브넷에 적용하기",
+    "chapter": "인터넷 경로 연결",
+    "action": "서브넷 연결 탭에서 서브넷 연결 편집을 누른다."
+  },
+  {
+    "name": "31-route-subnet-selected",
+    "title": "25 실습 서브넷 선택 후 저장",
+    "at": "2026-10-17T09:22:06.942Z",
+    "raw": "raw/31-route-subnet-selected.png",
+    "explained": "explained/31-route-subnet-selected.png",
+    "notes": [
+      {
+        "caption": "이번에 만든 서브넷을 선택해요. 저장하면 이 서브넷이 새 경로를 사용해요.",
+        "anchor": {
+          "x": 49.5,
+          "y": 279.5,
+          "w": 16,
+          "h": 16
+        }
+      }
+    ],
+    "heading": "실습 서브넷 선택 후 저장",
+    "chapter": "인터넷 경로 연결",
+    "action": "codyssey-haru2-study-public을 선택하고 연결을 저장한다."
+  },
+  {
+    "name": "32-route-subnet-associated",
+    "title": "26 서브넷 연결 완료",
+    "at": "2026-10-17T09:22:39.100Z",
+    "raw": "raw/32-route-subnet-associated.png",
+    "explained": "explained/32-route-subnet-associated.png",
+    "notes": [
+      {
+        "caption": "명시적 서브넷 연결에 표시되면, 이 서브넷에 경로가 적용된 거예요.",
+        "anchor": {
+          "x": 559.25,
+          "y": 559,
+          "w": 281.25,
+          "h": 33
+        }
+      }
+    ],
+    "heading": "서브넷 연결 완료",
+    "chapter": "인터넷 경로 연결",
+    "action": "명시적 서브넷 연결에 이번 서브넷이 표시되는지 확인한다."
+  },
+  {
+    "name": "33b-security-group-start",
+    "title": "27 접속 규칙 만들기",
+    "at": "2026-10-17T09:23:58.851Z",
+    "raw": "raw/33b-security-group-start.png",
+    "explained": "explained/33b-security-group-start.png",
+    "notes": [
+      {
+        "caption": "방문자의 웹 접속과 관리자의 SSH 접속을 구분해서 허용할 거예요.",
+        "anchor": {
+          "x": 1307.4375,
+          "y": 102,
+          "w": 116.5625,
+          "h": 28
+        }
+      }
+    ],
+    "heading": "접속 규칙 만들기",
+    "chapter": "보안 그룹",
+    "action": "보안 그룹 메뉴에서 보안 그룹 생성을 누른다."
+  },
+  {
+    "name": "34-sg-vpc-choice",
+    "title": "28 보안 그룹의 VPC 선택",
+    "at": "2026-10-17T09:24:15.605Z",
+    "raw": "raw/34-sg-vpc-choice.png",
+    "explained": "explained/34-sg-vpc-choice.png",
+    "notes": [
+      {
+        "caption": "보안 그룹도 같은 VPC에 만들어요. 기본 VPC가 선택돼 있으면 바꿔줘요.",
+        "anchor": {
+          "x": 37,
+          "y": 453,
+          "w": 554.6640625,
+          "h": 48
+        }
+      }
+    ],
+    "heading": "보안 그룹의 VPC 선택",
+    "chapter": "보안 그룹",
+    "action": "이름 codyssey-haru2-study-web-sg, 설명 HTTP public; SSH from study host only를 입력하고 실습 VPC를 선택한다."
+  },
+  {
+    "name": "38-sg-http-ssh",
+    "title": "29 웹 접속과 관리 접속 구분",
+    "at": "2026-10-17T09:26:22.298Z",
+    "raw": "raw/38-sg-http-ssh.png",
+    "explained": "explained/38-sg-http-ssh.png",
+    "notes": [
+      {
+        "caption": "80번은 웹페이지 방문용이에요. 모든 IPv4 주소에서 허용해요.",
+        "anchor": {
+          "x": 382.7421875,
+          "y": 490.5,
+          "w": 209.1640625,
+          "h": 28
+        }
+      },
+      {
+        "caption": "22번 관리 접속은 현재 내 주소 하나만 허용해요. /32는 주소 하나예요.",
+        "anchor": {
+          "x": 825.0703125,
+          "y": 556.5,
+          "w": 225.1640625,
+          "h": 70
+        }
+      }
+    ],
+    "heading": "웹 접속과 관리 접속 구분",
+    "chapter": "보안 그룹",
+    "action": "HTTP TCP 80은 0.0.0.0/0, SSH TCP 22는 현재 내 공인 IP/32를 입력한다. 화면의 IP를 그대로 복사하지 않는다."
+  },
+  {
+    "name": "39-sg-tags",
+    "title": "30 보안 그룹 소유 태그",
+    "at": "2026-10-17T09:26:23.633Z",
+    "raw": "raw/39-sg-tags.png",
+    "explained": "explained/39-sg-tags.png",
+    "notes": [
+      {
+        "caption": "보안 그룹에도 과제와 소유자 태그를 넣어 다른 자원과 구분해요.",
+        "anchor": {
+          "x": 549.625,
+          "y": 887,
+          "w": 496.625,
+          "h": 28
+        }
+      }
+    ],
+    "heading": "보안 그룹 소유 태그",
+    "chapter": "보안 그룹",
+    "action": "같은 Project·Owner 태그를 넣고 보안 그룹 생성을 누른다. 아웃바운드는 기본 전체 허용을 유지한다."
+  },
+  {
+    "name": "41-console-ec2",
+    "title": "32 EC2 서비스로 이동",
+    "at": "2026-10-17T09:27:35.876Z",
+    "raw": "raw/41-console-ec2.png",
+    "explained": "explained/41-console-ec2.png",
+    "notes": [
+      {
+        "caption": "이제 컴퓨터를 만들 차례예요. EC2 서비스로 이동해요.",
+        "anchor": {
+          "x": 129.5,
+          "y": 413.5,
+          "w": 24.28125,
+          "h": 16.5
+        }
+      }
+    ],
+    "heading": "EC2 서비스로 이동",
+    "chapter": "공개 키와 EC2",
+    "action": "EC2 서비스로 이동한다."
+  },
+  {
+    "name": "42-ec2-key-pairs-menu",
+    "title": "33 SSH 로그인 키 등록",
+    "at": "2026-10-17T09:28:00.577Z",
+    "raw": "raw/42-ec2-key-pairs-menu.png",
+    "explained": "explained/42-ec2-key-pairs-menu.png",
+    "notes": [
+      {
+        "caption": "서버에 공개키를 등록하고, 내 컴퓨터의 개인키로 SSH 로그인할 거예요.",
+        "anchor": {
+          "x": 20,
+          "y": 889,
+          "w": 181,
+          "h": 28
+        }
+      }
+    ],
+    "heading": "SSH 로그인 키 등록",
+    "chapter": "공개 키와 EC2",
+    "action": "왼쪽 네트워크 및 보안 → 키 페어를 연다."
+  },
+  {
+    "name": "43-key-import-menu",
+    "title": "43 · SSH 로그인용 공개 키 가져오기",
+    "at": "2026-10-17T09:33:17.285Z",
+    "raw": "raw/43-key-import-menu.png",
+    "explained": "explained/43-key-import-menu.png",
+    "notes": [
+      {
+        "caption": "이미 가진 공개 키를 AWS에 등록해요. 개인 키는 내 컴퓨터에만 보관해요.",
+        "anchor": {
+          "x": 1204,
+          "y": 142,
+          "w": 160,
+          "h": 32
+        }
+      }
+    ],
+    "heading": "SSH 로그인용 공개 키 가져오기",
+    "chapter": "공개 키와 EC2",
+    "action": "작업 → 키 페어 가져오기를 누른다. 이번 정책은 공개 키 가져오기를 허용한다."
+  },
+  {
+    "name": "44-key-import-settings",
+    "title": "44 · SSH 공개 키 등록",
+    "at": "2026-10-17T09:33:45.495Z",
+    "raw": "raw/44-key-import-settings.png",
+    "explained": "explained/44-key-import-settings.png",
+    "notes": [
+      {
+        "caption": "EC2를 만들 때 이 키 이름을 선택해요.",
+        "anchor": {
+          "x": 45,
+          "y": 254,
+          "w": 883.328125,
+          "h": 32
+        }
+      },
+      {
+        "caption": "공개 키만 등록해요. 대응하는 개인 키가 있어야 SSH로 접속할 수 있어요.",
+        "anchor": {
+          "x": 45,
+          "y": 426,
+          "w": 883.328125,
+          "h": 172
+        }
+      }
+    ],
+    "heading": "SSH 공개 키 등록",
+    "chapter": "공개 키와 EC2",
+    "action": "이름 codyssey-haru2-study-key를 넣고 내 .pub 공개 키 내용을 붙인다. Project·Owner 태그를 넣고 가져온다. 개인 키 내용을 붙이지 않는다."
+  },
+  {
+    "name": "45b-key-imported",
+    "title": "45 · 키 등록 완료",
+    "at": "2026-10-17T09:33:57.689Z",
+    "raw": "raw/45b-key-imported.png",
+    "explained": "explained/45b-key-imported.png",
+    "notes": [
+      {
+        "caption": "AWS에는 공개 키가 등록됐어요. 나중에 이 키와 연결된 개인 키로 접속해요.",
+        "anchor": {
+          "x": 306,
+          "y": 279,
+          "w": 311,
+          "h": 31
+        }
+      }
+    ],
+    "heading": "키 등록 완료",
+    "chapter": "공개 키와 EC2",
+    "action": "키 목록에 이름과 ed25519 유형이 표시되는지 확인한다."
+  },
+  {
+    "name": "46-instance-list",
+    "title": "46 · EC2 서버 만들기 시작",
+    "at": "2026-10-17T09:34:10.759Z",
+    "raw": "raw/46-instance-list.png",
+    "explained": "explained/46-instance-list.png",
+    "notes": [
+      {
+        "caption": "인스턴스는 AWS에서 빌려 쓰는 가상 컴퓨터 한 대예요.",
+        "anchor": {
+          "x": 1246.1796875,
+          "y": 106,
+          "w": 116.8203125,
+          "h": 32
+        }
+      }
+    ],
+    "heading": "EC2 서버 만들기 시작",
+    "chapter": "공개 키와 EC2",
+    "action": "인스턴스 메뉴에서 인스턴스 시작을 누른다."
+  },
+  {
+    "name": "47b-instance-tags",
+    "title": "47 · 함께 생기는 자원에도 이름표 붙이기",
+    "at": "2026-10-17T09:34:52.962Z",
+    "raw": "raw/47b-instance-tags.png",
+    "explained": "explained/47b-instance-tags.png",
+    "notes": [
+      {
+        "caption": "태그는 자원을 찾고 소유자를 구분하는 이름표예요.",
+        "anchor": {
+          "x": 45,
+          "y": 94,
+          "w": 202.328125,
+          "h": 32
+        }
+      },
+      {
+        "caption": "인스턴스·볼륨·네트워크 인터페이스에 같은 태그를 적용해요.",
+        "anchor": {
+          "x": 489.65625,
+          "y": 94,
+          "w": 202.328125,
+          "h": 32
+        }
+      }
+    ],
+    "heading": "함께 생기는 자원에도 이름표 붙이기",
+    "chapter": "공개 키와 EC2",
+    "action": "Name=codyssey-haru2-study-web과 Project·Owner를 입력한다. 각 태그의 리소스 유형에서 인스턴스·볼륨·네트워크 인터페이스를 모두 선택한다."
+  },
+  {
+    "name": "48-ami-choice",
+    "title": "48 · 운영체제와 서버 크기",
+    "at": "2026-10-17T09:35:05.799Z",
+    "raw": "raw/48-ami-choice.png",
+    "explained": "explained/48-ami-choice.png",
+    "notes": [
+      {
+        "caption": "AMI는 운영체제 등이 준비된 설치 이미지예요. Amazon Linux를 사용해요.",
+        "anchor": {
+          "x": 45,
+          "y": 94,
+          "w": 869.328125,
+          "h": 64
+        }
+      },
+      {
+        "caption": "t3.micro는 서버의 크기예요. 이번 웹페이지 실습에 사용할 작은 서버예요.",
+        "anchor": {
+          "x": 45,
+          "y": 506.5,
+          "w": 637,
+          "h": 80
+        }
+      }
+    ],
+    "heading": "운영체제와 서버 크기",
+    "chapter": "공개 키와 EC2",
+    "action": "Amazon Linux 2023 x86_64와 t3.micro를 선택한다. AMI ID와 버전은 시점에 따라 바뀔 수 있다."
+  },
+  {
+    "name": "49-key-choice",
+    "title": "49 · 로그인에 사용할 키 선택",
+    "at": "2026-10-17T09:35:18.366Z",
+    "raw": "raw/49-key-choice.png",
+    "explained": "explained/49-key-choice.png",
+    "notes": [
+      {
+        "caption": "방금 등록한 키를 선택해요. 서버를 만든 뒤 SSH 접속에 사용해요.",
+        "anchor": {
+          "x": 45,
+          "y": 768.5,
+          "w": 572.8828125,
+          "h": 32
+        }
+      }
+    ],
+    "heading": "로그인에 사용할 키 선택",
+    "chapter": "공개 키와 EC2",
+    "action": "앞서 가져온 codyssey-haru2-study-key를 선택한다."
+  },
+  {
+    "name": "51-instance-network",
+    "title": "51 · 서버를 우리 네트워크에 배치",
+    "at": "2026-10-17T09:36:21.273Z",
+    "raw": "raw/51-instance-network.png",
+    "explained": "explained/51-instance-network.png",
+    "notes": [
+      {
+        "caption": "VPC는 우리 실습용 네트워크 공간이에요.",
+        "anchor": {
+          "x": 45,
+          "y": 94,
+          "w": 572.8828125,
+          "h": 48
+        }
+      },
+      {
+        "caption": "서버가 들어갈 구역은 10.77.1.0/24 서브넷이에요.",
+        "anchor": {
+          "x": 45,
+          "y": 174,
+          "w": 572.8828125,
+          "h": 80
+        }
+      },
+      {
+        "caption": "공개 IP를 켜야 인터넷에서 이 서버의 주소로 접속할 수 있어요.",
+        "anchor": {
+          "x": 45,
+          "y": 290,
+          "w": 572.8828125,
+          "h": 32
+        }
+      }
+    ],
+    "heading": "서버를 우리 네트워크에 배치",
+    "chapter": "공개 키와 EC2",
+    "action": "네트워크 편집에서 실습 VPC·서브넷을 선택하고 공개 IP를 활성화한다. 기존 보안 그룹 선택 → codyssey-haru2-study-web-sg를 지정한다."
+  },
+  {
+    "name": "52-ebs-disk",
+    "title": "52 · 서버의 디스크 EBS",
+    "at": "2026-10-17T09:36:44.536Z",
+    "raw": "raw/52-ebs-disk.png",
+    "explained": "explained/52-ebs-disk.png",
+    "notes": [
+      {
+        "caption": "EBS는 운영체제와 웹 파일을 저장하는 디스크예요. 8GiB로 시작해요.",
+        "anchor": {
+          "x": 45,
+          "y": 488.5,
+          "w": 276.4375,
+          "h": 32
+        }
+      },
+      {
+        "caption": "종료 시 삭제를 켜 두면 서버를 완전히 삭제할 때 이 디스크도 함께 정리돼요.",
+        "anchor": {
+          "x": 45,
+          "y": 564.5,
+          "w": 276.4375,
+          "h": 32
+        }
+      },
+      {
+        "caption": "저장된 디스크 데이터는 암호화해요.",
+        "anchor": {
+          "x": 341.4375,
+          "y": 564.5,
+          "w": 276.4375,
+          "h": 32
+        }
+      }
+    ],
+    "heading": "서버의 디스크 EBS",
+    "chapter": "공개 키와 EC2",
+    "action": "스토리지는 gp3 8GiB, 3000 IOPS, 125MiB/s로 둔다. 고급에서 암호화됨과 종료 시 삭제 예를 확인한다."
+  },
+  {
+    "name": "53-credit-standard",
+    "title": "53 · CPU 크레딧 표준 모드",
+    "at": "2026-10-17T09:37:09.877Z",
+    "raw": "raw/53-credit-standard.png",
+    "explained": "explained/53-credit-standard.png",
+    "notes": [
+      {
+        "caption": "표준 모드는 CPU 크레딧이 소진되면 성능이 제한돼요. 초과 크레딧 과금은 발생하지 않아요.",
+        "anchor": {
+          "x": 45,
+          "y": 883,
+          "w": 572.8828125,
+          "h": 32
+        }
+      }
+    ],
+    "heading": "CPU 크레딧 표준 모드",
+    "chapter": "공개 키와 EC2",
+    "action": "고급 세부 정보에서 크레딧 사양을 표준으로 선택한다. 메타데이터 버전은 V2만 해당을 유지한다."
+  },
+  {
+    "name": "55-launch-confirm",
+    "title": "55 · 설정 확인 후 서버 시작",
+    "at": "2026-10-17T09:37:58.407Z",
+    "raw": "raw/55-launch-confirm.png",
+    "explained": "explained/55-launch-confirm.png",
+    "notes": [
+      {
+        "caption": "서버는 한 대만 만들어요.",
+        "anchor": {
+          "x": 980.328125,
+          "y": 181,
+          "w": 399.6640625,
+          "h": 32
+        }
+      },
+      {
+        "caption": "누르면 지금 정한 운영체제·디스크·네트워크로 가상 컴퓨터가 만들어져요.",
+        "anchor": {
+          "x": 1259.171875,
+          "y": 519,
+          "w": 120.8203125,
+          "h": 32
+        }
+      }
+    ],
+    "heading": "설정 확인 후 서버 시작",
+    "chapter": "공개 키와 EC2",
+    "action": "인스턴스 개수 1, AMI·t3.micro·보안 그룹·디스크 요약을 확인한 뒤 인스턴스 시작을 누른다."
+  },
+  {
+    "name": "56b-instance-created",
+    "title": "56 · 서버 생성 성공",
+    "at": "2026-10-17T09:38:14.651Z",
+    "raw": "raw/56b-instance-created.png",
+    "explained": "explained/56b-instance-created.png",
+    "notes": [
+      {
+        "caption": "이 ID가 방금 만든 서버의 고유 번호예요. 상세 화면에서 상태와 공개 IP를 확인해요.",
+        "anchor": {
+          "x": 212.390625,
+          "y": 161.5,
+          "w": 143.96875,
+          "h": 16.5
+        }
+      }
+    ],
+    "heading": "서버 생성 성공",
+    "chapter": "공개 키와 EC2",
+    "action": "성공 메시지를 확인하고 생성된 인스턴스 ID를 눌러 상세 화면을 연다."
+  },
+  {
+    "name": "57c-public-private-ip",
+    "title": "57 · 서버의 두 가지 주소",
+    "at": "2026-10-17T10:22:32.628Z",
+    "raw": "raw/57c-public-private-ip.png",
+    "explained": "explained/57c-public-private-ip.png",
+    "notes": [
+      {
+        "caption": "공개 IP는 인터넷에서 접속할 주소예요.",
+        "anchor": {
+          "x": 657.328125,
+          "y": 223,
+          "w": 24,
+          "h": 20
+        }
+      },
+      {
+        "caption": "내부 IP는 VPC 안에서 쓰는 주소예요. 우리가 만든 서브넷 범위에 들어가요.",
+        "anchor": {
+          "x": 1028.65625,
+          "y": 224,
+          "w": 104.0625,
+          "h": 17
+        }
+      }
+    ],
+    "heading": "서버의 두 가지 주소",
+    "chapter": "공개 키와 EC2",
+    "action": "실행 상태와 공개·내부 주소를 확인한다. 이번 서버의 공개 IP는 43.201.62.16, 내부 IP는 10.77.1.121이다."
+  },
+  {
+    "name": "58-ssh-instructions",
+    "title": "58 · 내 컴퓨터에서 SSH로 접속",
+    "at": "2026-10-17T10:10:15.697Z",
+    "raw": "raw/58-ssh-instructions.png",
+    "explained": "explained/58-ssh-instructions.png",
+    "notes": [
+      {
+        "caption": "SSH 클라이언트로 접속하면 명령은 AWS 서버에서 실행돼요.",
+        "anchor": {
+          "x": 176.078125,
+          "y": 355,
+          "w": 160.609375,
+          "h": 44
+        }
+      }
+    ],
+    "heading": "내 컴퓨터에서 SSH로 접속",
+    "chapter": "SSH와 웹페이지 확인",
+    "action": "연결 → SSH 클라이언트 내부를 연다. 콘솔의 .pem 파일명은 예시다. 이번에는 기존 개인 키 ~/.ssh/codyssey-haru2-ed25519로 접속했다."
+  },
+  {
+    "name": "59a-ssh-ip-changed",
+    "title": "59 · 접속 위치가 바뀌면 SSH 허용 주소도 확인",
+    "at": "2026-10-17T10:09:20.688Z",
+    "raw": "raw/59a-ssh-ip-changed.png",
+    "explained": "explained/59a-ssh-ip-changed.png",
+    "notes": [
+      {
+        "caption": "SSH는 22번 포트예요. 현재 컴퓨터의 공인 IP 하나만 허용해요.",
+        "anchor": {
+          "x": 614.140625,
+          "y": 339,
+          "w": 97.828125,
+          "h": 28
+        }
+      },
+      {
+        "caption": "이전 주소의 SSH 규칙을 지우고 현재 주소의 규칙으로 교체해요.",
+        "anchor": {
+          "x": 1297.109375,
+          "y": 339,
+          "w": 60.375,
+          "h": 28
+        }
+      }
+    ],
+    "heading": "접속 위치가 바뀌면 SSH 허용 주소도 확인",
+    "chapter": "SSH와 웹페이지 확인",
+    "action": "이번 실습에서는 네트워크가 바뀌어 SSH가 시간 초과됐다. 현재 공인 IP와 허용된 /32 주소를 비교한다."
+  },
+  {
+    "name": "59b-ssh-current-ip",
+    "title": "60 · 현재 주소 하나로 SSH 접속 허용",
+    "at": "2026-10-17T10:09:44.373Z",
+    "raw": "raw/59b-ssh-current-ip.png",
+    "explained": "explained/59b-ssh-current-ip.png",
+    "notes": [
+      {
+        "caption": "현재 내 IP에 /32를 붙여요. 모든 사람에게 SSH를 여는 설정이 아니에요.",
+        "anchor": {
+          "x": 955.625,
+          "y": 339,
+          "w": 211.65625,
+          "h": 28
+        }
+      }
+    ],
+    "heading": "현재 주소 하나로 SSH 접속 허용",
+    "chapter": "SSH와 웹페이지 확인",
+    "action": "기존 SSH 규칙을 지우고 현재 주소 218.51.90.68/32의 SSH 규칙을 추가해 저장했다. 각자의 현재 주소를 사용한다."
+  },
+  {
+    "name": "60-security-final",
+    "title": "60 · 현재 적용된 접속 규칙 확인",
+    "at": "2026-10-17T10:11:45.423Z",
+    "raw": "raw/60-security-final.png",
+    "explained": "explained/60-security-final.png",
+    "notes": [
+      {
+        "caption": "웹 방문자는 HTTP 80으로 접속해요. 출발지는 모든 IPv4 주소를 허용해요.",
+        "anchor": {
+          "x": 272.65625,
+          "y": 269,
+          "w": 211.65625,
+          "h": 28
+        }
+      },
+      {
+        "caption": "서버 관리용 SSH 22는 현재 내 공인 IP 하나만 허용해요.",
+        "anchor": {
+          "x": 272.65625,
+          "y": 339,
+          "w": 211.65625,
+          "h": 28
+        }
+      }
+    ],
+    "heading": "현재 적용된 접속 규칙 확인",
+    "chapter": "SSH와 웹페이지 확인",
+    "action": "HTTP 80 전체 허용과 SSH 22 현재 주소 하나 허용을 다시 확인한다. 설정 확인 후 취소로 나오면 추가 변경은 없다."
+  },
+  {
+    "name": "61-ssh-server-check",
+    "title": "61 · 실제 SSH 실행 결과 읽기",
+    "at": "2026-10-17T10:12:51.240Z",
+    "raw": "raw/61-ssh-server-check.png",
+    "explained": "explained/61-ssh-server-check.png",
+    "notes": [
+      {
+        "caption": "설정을 검사하고 Nginx를 실행했어요. localhost는 지금 명령을 실행하는 EC2 자신이에요.",
+        "anchor": {
+          "x": 56,
+          "y": 251.078125,
+          "w": 900,
+          "h": 196.4375
+        }
+      },
+      {
+        "caption": "설정 검사 성공, active, HTTP 200과 ok가 나오면 서버 내부에서는 정상이에요.",
+        "anchor": {
+          "x": 56,
+          "y": 465.515625,
+          "w": 900,
+          "h": 433.9375
+        }
+      }
+    ],
+    "heading": "실제 SSH 실행 결과 읽기",
+    "chapter": "SSH와 웹페이지 확인",
+    "action": "SSH에서 Nginx를 설치하고 site/index.html과 config/nginx.conf를 적용한다. 설정 검사·실행 상태·localhost/health 응답을 확인한다. 이 이미지는 실제 로그를 읽기 좋게 표시한 화면이다."
+  },
+  {
+    "name": "62-external-home",
+    "title": "62 · 인터넷에서 웹페이지 접속 성공",
+    "at": "2026-10-17T10:11:08.568Z",
+    "raw": "raw/62-external-home.png",
+    "explained": "explained/62-external-home.png",
+    "notes": [
+      {
+        "caption": "브라우저가 서버의 /health에 요청을 보내고 HTTP 200을 받았어요.",
+        "anchor": {
+          "x": 227,
+          "y": 456.46875,
+          "w": 121.171875,
+          "h": 17
+        }
+      },
+      {
+        "caption": "이 화면의 파일은 AWS EC2 안에 있어요. Nginx가 인터넷으로 보내준 결과예요.",
+        "anchor": {
+          "x": 192,
+          "y": 172,
+          "w": 1056,
+          "h": 153.59375
+        }
+      }
+    ],
+    "heading": "인터넷에서 웹페이지 접속 성공",
+    "chapter": "SSH와 웹페이지 확인",
+    "action": "내 브라우저에서 http://43.201.62.16/를 연다. 홈페이지와 정상 동작 표시를 확인한다."
+  },
+  {
+    "name": "63-external-health",
+    "title": "63 · 상태 확인 주소도 정상 응답",
+    "at": "2026-10-17T10:11:09.505Z",
+    "raw": "raw/63-external-health.png",
+    "explained": "explained/63-external-health.png",
+    "notes": [
+      {
+        "caption": "ok는 Nginx 설정에서 만든 응답이에요. 서버 내부와 외부에서 같은 결과를 확인했어요.",
+        "anchor": {
+          "x": 8,
+          "y": 13,
+          "w": 1424,
+          "h": 15
+        }
+      }
+    ],
+    "heading": "상태 확인 주소도 정상 응답",
+    "chapter": "SSH와 웹페이지 확인",
+    "action": "GET /health 링크를 누르고 ok 응답을 확인한다. 이번 실습은 HTTPS 인증서를 구성하지 않았으므로 http://를 사용한다."
+  }
+]

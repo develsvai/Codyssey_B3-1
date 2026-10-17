@@ -1,0 +1,50 @@
+{
+    "Volumes": [
+        {
+            "AvailabilityZoneId": "apne2-az1",
+            "Iops": 3000,
+            "Tags": [
+                {
+                    "Key": "Project",
+                    "Value": "Codyssey-B3-1"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "Haru2_freetier_iam_user"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "codyssey-haru2-study-web"
+                }
+            ],
+            "VolumeType": "gp3",
+            "MultiAttachEnabled": false,
+            "Throughput": 125,
+            "Operator": {
+                "Managed": false,
+                "HiddenByDefault": false
+            },
+            "VolumeArn": "arn:aws:ec2:ap-northeast-2:979342849963:volume/vol-04480d5c1081ac4bc",
+            "OwnerId": "979342849963",
+            "VolumeId": "vol-04480d5c1081ac4bc",
+            "Size": 8,
+            "SnapshotId": "snap-0d16fc7055e141db2",
+            "AvailabilityZone": "ap-northeast-2a",
+            "State": "in-use",
+            "CreateTime": "2026-10-17T09:38:01.129000+00:00",
+            "Attachments": [
+                {
+                    "DeleteOnTermination": true,
+                    "EbsCardIndex": 0,
+                    "VolumeId": "vol-04480d5c1081ac4bc",
+                    "InstanceId": "i-069484cc20019a303",
+                    "Device": "/dev/xvda",
+                    "State": "attached",
+                    "AttachTime": "2026-10-17T09:38:01+00:00"
+                }
+            ],
+            "Encrypted": true,
+            "KmsKeyId": "arn:aws:kms:ap-northeast-2:979342849963:key/1302c709-e796-454a-ba1d-3dc13f742b95"
+        }
+    ]
+}

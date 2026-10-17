@@ -1,0 +1,71 @@
+{
+    "NetworkInterfaces": [
+        {
+            "Association": {
+                "IpOwnerId": "amazon",
+                "PublicDnsName": "",
+                "PublicIp": "43.201.62.16"
+            },
+            "Attachment": {
+                "AttachTime": "2026-10-17T09:38:00+00:00",
+                "AttachmentId": "eni-attach-09dd1cc155bb6dbd0",
+                "DeleteOnTermination": true,
+                "DeviceIndex": 0,
+                "NetworkCardIndex": 0,
+                "InstanceId": "i-069484cc20019a303",
+                "InstanceOwnerId": "979342849963",
+                "Status": "attached"
+            },
+            "AvailabilityZone": "ap-northeast-2a",
+            "Description": "",
+            "Groups": [
+                {
+                    "GroupId": "sg-0c4b0d1168a2de731",
+                    "GroupName": "codyssey-haru2-study-web-sg"
+                }
+            ],
+            "InterfaceType": "interface",
+            "Ipv6Addresses": [],
+            "MacAddress": "02:ff:cc:00:02:77",
+            "NetworkInterfaceId": "eni-0ae4eb9aaa01b732f",
+            "OwnerId": "979342849963",
+            "PublicDnsName": "",
+            "PrivateIpAddress": "10.77.1.121",
+            "PrivateIpAddresses": [
+                {
+                    "Association": {
+                        "IpOwnerId": "amazon",
+                        "PublicDnsName": "",
+                        "PublicIp": "43.201.62.16"
+                    },
+                    "Primary": true,
+                    "PrivateIpAddress": "10.77.1.121"
+                }
+            ],
+            "RequesterManaged": false,
+            "SourceDestCheck": true,
+            "Status": "in-use",
+            "SubnetId": "subnet-0a13f7b77cceeb4cd",
+            "TagSet": [
+                {
+                    "Key": "Name",
+                    "Value": "codyssey-haru2-study-web"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "Codyssey-B3-1"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "Haru2_freetier_iam_user"
+                }
+            ],
+            "VpcId": "vpc-0eb4703971c2d7750",
+            "Operator": {
+                "Managed": false,
+                "HiddenByDefault": false
+            },
+            "AvailabilityZoneId": "apne2-az1"
+        }
+    ]
+}
