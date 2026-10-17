@@ -4,7 +4,7 @@
 
 **첫 과제 실습은 2026-10-17 17:36:10 KST에 자원 정리까지 완료했다. 이후 19일 스터디를 위해 콘솔에서 새 자원을 재구축했다. 새 웹페이지는 [http://43.201.62.16/](http://43.201.62.16/)이며, 사용자 선택에 따라 19일까지 실행 상태로 유지한다. 자동 종료는 설정하지 않았다.**
 
-[45분 스터디 노트](docs/study/study-notes.md) · [52장 캡처 따라하기](docs/study/rebuild-20261017/walkthrough.md) · [브라우저로 넘겨보기](docs/study/rebuild-20261017/index.html) · [새 자원 목록](docs/study/rebuild-20261017/resources.json)
+[웹에서 스터디 자료 보기](https://develsvai.github.io/Codyssey_B3-1/) · [45분 스터디 노트](docs/study/study-notes.md) · [52장 캡처 따라하기](docs/study/rebuild-20261017/walkthrough.md) · [브라우저로 넘겨보기](docs/study/rebuild-20261017/index.html) · [새 자원 목록](docs/study/rebuild-20261017/resources.json)
 
 아래 본문은 정리된 첫 과제의 제출 기록이다. 새 스터디 서버와 자원 ID를 구분한다.
 
