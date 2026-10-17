@@ -1,0 +1,598 @@
+{
+  "checked_at": "2026-10-17T08:32:39.489786+00:00",
+  "identity": {
+    "UserId": "AIDA6IBLB66VQSWOSHVE4",
+    "Account": "979342849963",
+    "Arn": "arn:aws:iam::979342849963:user/Haru2_freetier_iam_user"
+  },
+  "describe-vpcs": {
+    "Vpcs": [
+      {
+        "OwnerId": "979342849963",
+        "InstanceTenancy": "default",
+        "CidrBlockAssociationSet": [
+          {
+            "AssociationId": "vpc-cidr-assoc-083bd19ad060cf540",
+            "CidrBlock": "10.77.0.0/16",
+            "CidrBlockState": {
+              "State": "associated"
+            }
+          }
+        ],
+        "IsDefault": false,
+        "Tags": [
+          {
+            "Key": "Owner",
+            "Value": "Haru2_freetier_iam_user"
+          },
+          {
+            "Key": "Project",
+            "Value": "Codyssey-B3-1"
+          },
+          {
+            "Key": "Name",
+            "Value": "codyssey-haru2-vpc"
+          }
+        ],
+        "BlockPublicAccessStates": {
+          "InternetGatewayBlockMode": "off"
+        },
+        "VpcId": "vpc-091ed4ac4c8fb0a88",
+        "State": "available",
+        "CidrBlock": "10.77.0.0/16",
+        "DhcpOptionsId": "dopt-009638312f8a72995"
+      }
+    ]
+  },
+  "describe-subnets": {
+    "Subnets": [
+      {
+        "AvailabilityZoneId": "apne2-az1",
+        "MapCustomerOwnedIpOnLaunch": false,
+        "OwnerId": "979342849963",
+        "AssignIpv6AddressOnCreation": false,
+        "Ipv6CidrBlockAssociationSet": [],
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "codyssey-haru2-public-subnet"
+          },
+          {
+            "Key": "Project",
+            "Value": "Codyssey-B3-1"
+          },
+          {
+            "Key": "Owner",
+            "Value": "Haru2_freetier_iam_user"
+          }
+        ],
+        "SubnetArn": "arn:aws:ec2:ap-northeast-2:979342849963:subnet/subnet-07add2cd4981316fe",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "PrivateDnsNameOptionsOnLaunch": {
+          "HostnameType": "ip-name",
+          "EnableResourceNameDnsARecord": false,
+          "EnableResourceNameDnsAAAARecord": false
+        },
+        "BlockPublicAccessStates": {
+          "InternetGatewayBlockMode": "off"
+        },
+        "SubnetId": "subnet-07add2cd4981316fe",
+        "State": "available",
+        "VpcId": "vpc-091ed4ac4c8fb0a88",
+        "CidrBlock": "10.77.1.0/24",
+        "AvailableIpAddressCount": 250,
+        "AvailabilityZone": "ap-northeast-2a",
+        "DefaultForAz": false,
+        "MapPublicIpOnLaunch": false
+      }
+    ]
+  },
+  "describe-internet-gateways": {
+    "InternetGateways": [
+      {
+        "Attachments": [
+          {
+            "State": "available",
+            "VpcId": "vpc-091ed4ac4c8fb0a88"
+          }
+        ],
+        "InternetGatewayId": "igw-0e0032f28ada231c5",
+        "OwnerId": "979342849963",
+        "Tags": [
+          {
+            "Key": "Project",
+            "Value": "Codyssey-B3-1"
+          },
+          {
+            "Key": "Name",
+            "Value": "codyssey-haru2-igw"
+          },
+          {
+            "Key": "Owner",
+            "Value": "Haru2_freetier_iam_user"
+          }
+        ]
+      }
+    ]
+  },
+  "describe-route-tables": {
+    "RouteTables": [
+      {
+        "Associations": [
+          {
+            "Main": false,
+            "RouteTableAssociationId": "rtbassoc-0906f2d2c6050863a",
+            "RouteTableId": "rtb-0fa8b7b667a2c6fee",
+            "SubnetId": "subnet-07add2cd4981316fe",
+            "AssociationState": {
+              "State": "associated"
+            }
+          }
+        ],
+        "PropagatingVgws": [],
+        "RouteTableId": "rtb-0fa8b7b667a2c6fee",
+        "Routes": [
+          {
+            "DestinationCidrBlock": "10.77.0.0/16",
+            "GatewayId": "local",
+            "Origin": "CreateRouteTable",
+            "State": "active"
+          },
+          {
+            "DestinationCidrBlock": "0.0.0.0/0",
+            "GatewayId": "igw-0e0032f28ada231c5",
+            "Origin": "CreateRoute",
+            "State": "active"
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "Project",
+            "Value": "Codyssey-B3-1"
+          },
+          {
+            "Key": "Owner",
+            "Value": "Haru2_freetier_iam_user"
+          },
+          {
+            "Key": "Name",
+            "Value": "codyssey-haru2-public-rt"
+          }
+        ],
+        "VpcId": "vpc-091ed4ac4c8fb0a88",
+        "OwnerId": "979342849963"
+      }
+    ]
+  },
+  "describe-security-groups": {
+    "SecurityGroups": [
+      {
+        "GroupId": "sg-09c2e52786f6da9a7",
+        "IpPermissionsEgress": [
+          {
+            "IpProtocol": "-1",
+            "UserIdGroupPairs": [],
+            "IpRanges": [
+              {
+                "CidrIp": "0.0.0.0/0"
+              }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": []
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "Owner",
+            "Value": "Haru2_freetier_iam_user"
+          },
+          {
+            "Key": "Project",
+            "Value": "Codyssey-B3-1"
+          },
+          {
+            "Key": "Name",
+            "Value": "codyssey-haru2-web-sg"
+          }
+        ],
+        "VpcId": "vpc-091ed4ac4c8fb0a88",
+        "SecurityGroupArn": "arn:aws:ec2:ap-northeast-2:979342849963:security-group/sg-09c2e52786f6da9a7",
+        "OwnerId": "979342849963",
+        "GroupName": "codyssey-haru2-web-sg",
+        "Description": "Codyssey Haru2 HTTP and restricted SSH",
+        "IpPermissions": [
+          {
+            "IpProtocol": "tcp",
+            "FromPort": 80,
+            "ToPort": 80,
+            "UserIdGroupPairs": [],
+            "IpRanges": [
+              {
+                "Description": "Public HTTP lab website",
+                "CidrIp": "0.0.0.0/0"
+              }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": []
+          },
+          {
+            "IpProtocol": "tcp",
+            "FromPort": 22,
+            "ToPort": 22,
+            "UserIdGroupPairs": [],
+            "IpRanges": [
+              {
+                "Description": "SSH from learner current public IP",
+                "CidrIp": "125.129.78.114/32"
+              }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": []
+          }
+        ]
+      }
+    ]
+  },
+  "describe-instances": {
+    "Reservations": [
+      {
+        "ReservationId": "r-09c2e09df193ae6ce",
+        "OwnerId": "979342849963",
+        "Groups": [],
+        "Instances": [
+          {
+            "Architecture": "x86_64",
+            "BlockDeviceMappings": [
+              {
+                "DeviceName": "/dev/xvda",
+                "Ebs": {
+                  "AttachTime": "2026-10-17T08:26:22+00:00",
+                  "DeleteOnTermination": true,
+                  "Status": "attached",
+                  "VolumeId": "vol-045ca25bece5c5925",
+                  "EbsCardIndex": 0
+                }
+              }
+            ],
+            "ClientToken": "codyssey-haru2-vpc-091ed4ac4c8fb0a88",
+            "EbsOptimized": false,
+            "EnaSupport": true,
+            "Hypervisor": "xen",
+            "NetworkInterfaces": [
+              {
+                "Association": {
+                  "IpOwnerId": "amazon",
+                  "PublicDnsName": "",
+                  "PublicIp": "3.38.165.200"
+                },
+                "Attachment": {
+                  "AttachTime": "2026-10-17T08:26:21+00:00",
+                  "AttachmentId": "eni-attach-0c054477078a3dd96",
+                  "DeleteOnTermination": true,
+                  "DeviceIndex": 0,
+                  "Status": "attached",
+                  "NetworkCardIndex": 0
+                },
+                "Description": "",
+                "Groups": [
+                  {
+                    "GroupId": "sg-09c2e52786f6da9a7",
+                    "GroupName": "codyssey-haru2-web-sg"
+                  }
+                ],
+                "Ipv6Addresses": [],
+                "MacAddress": "02:ff:cb:6a:7f:0f",
+                "NetworkInterfaceId": "eni-0416504419416aafa",
+                "OwnerId": "979342849963",
+                "PrivateIpAddress": "10.77.1.53",
+                "PrivateIpAddresses": [
+                  {
+                    "Association": {
+                      "IpOwnerId": "amazon",
+                      "PublicDnsName": "",
+                      "PublicIp": "3.38.165.200"
+                    },
+                    "Primary": true,
+                    "PrivateIpAddress": "10.77.1.53"
+                  }
+                ],
+                "SourceDestCheck": true,
+                "Status": "in-use",
+                "SubnetId": "subnet-07add2cd4981316fe",
+                "VpcId": "vpc-091ed4ac4c8fb0a88",
+                "InterfaceType": "interface",
+                "Operator": {
+                  "Managed": false
+                }
+              }
+            ],
+            "RootDeviceName": "/dev/xvda",
+            "RootDeviceType": "ebs",
+            "SecurityGroups": [
+              {
+                "GroupId": "sg-09c2e52786f6da9a7",
+                "GroupName": "codyssey-haru2-web-sg"
+              }
+            ],
+            "SourceDestCheck": true,
+            "Tags": [
+              {
+                "Key": "Name",
+                "Value": "codyssey-haru2-web"
+              },
+              {
+                "Key": "Owner",
+                "Value": "Haru2_freetier_iam_user"
+              },
+              {
+                "Key": "Project",
+                "Value": "Codyssey-B3-1"
+              }
+            ],
+            "VirtualizationType": "hvm",
+            "CpuOptions": {
+              "CoreCount": 1,
+              "ThreadsPerCore": 2
+            },
+            "CapacityReservationSpecification": {
+              "CapacityReservationPreference": "none"
+            },
+            "HibernationOptions": {
+              "Configured": false
+            },
+            "MetadataOptions": {
+              "State": "applied",
+              "HttpTokens": "required",
+              "HttpPutResponseHopLimit": 2,
+              "HttpEndpoint": "enabled",
+              "HttpProtocolIpv6": "disabled",
+              "InstanceMetadataTags": "disabled"
+            },
+            "EnclaveOptions": {
+              "Enabled": false
+            },
+            "BootMode": "uefi-preferred",
+            "PlatformDetails": "Linux/UNIX",
+            "UsageOperation": "RunInstances",
+            "UsageOperationUpdateTime": "2026-10-17T08:26:21+00:00",
+            "PrivateDnsNameOptions": {
+              "HostnameType": "ip-name",
+              "EnableResourceNameDnsARecord": false,
+              "EnableResourceNameDnsAAAARecord": false
+            },
+            "MaintenanceOptions": {
+              "AutoRecovery": "default",
+              "RebootMigration": "default"
+            },
+            "CurrentInstanceBootMode": "uefi",
+            "NetworkPerformanceOptions": {
+              "BandwidthWeighting": "default"
+            },
+            "Operator": {
+              "Managed": false,
+              "HiddenByDefault": false
+            },
+            "InstanceId": "i-0662f24aee4fe0031",
+            "ImageId": "ami-0e058fd137468076a",
+            "State": {
+              "Code": 16,
+              "Name": "running"
+            },
+            "PrivateDnsName": "ip-10-77-1-53.ap-northeast-2.compute.internal",
+            "PublicDnsName": "",
+            "StateTransitionReason": "",
+            "KeyName": "codyssey-haru2-key",
+            "AmiLaunchIndex": 0,
+            "ProductCodes": [],
+            "InstanceType": "t3.micro",
+            "LaunchTime": "2026-10-17T08:26:21+00:00",
+            "Placement": {
+              "AvailabilityZoneId": "apne2-az1",
+              "GroupName": "",
+              "Tenancy": "default",
+              "AvailabilityZone": "ap-northeast-2a"
+            },
+            "Monitoring": {
+              "State": "disabled"
+            },
+            "SubnetId": "subnet-07add2cd4981316fe",
+            "VpcId": "vpc-091ed4ac4c8fb0a88",
+            "PrivateIpAddress": "10.77.1.53",
+            "PublicIpAddress": "3.38.165.200"
+          }
+        ]
+      }
+    ]
+  },
+  "describe-instance-status": {
+    "InstanceStatuses": [
+      {
+        "AvailabilityZone": "ap-northeast-2a",
+        "AvailabilityZoneId": "apne2-az1",
+        "Operator": {
+          "Managed": false,
+          "HiddenByDefault": false
+        },
+        "InstanceId": "i-0662f24aee4fe0031",
+        "InstanceState": {
+          "Code": 16,
+          "Name": "running"
+        },
+        "InstanceStatus": {
+          "Details": [
+            {
+              "Name": "reachability",
+              "Status": "passed"
+            }
+          ],
+          "Status": "ok"
+        },
+        "SystemStatus": {
+          "Details": [
+            {
+              "Name": "reachability",
+              "Status": "passed"
+            }
+          ],
+          "Status": "ok"
+        },
+        "AttachedEbsStatus": {
+          "Details": [
+            {
+              "Name": "reachability",
+              "Status": "passed"
+            }
+          ],
+          "Status": "ok"
+        }
+      }
+    ]
+  },
+  "describe-volumes": {
+    "Volumes": [
+      {
+        "AvailabilityZoneId": "apne2-az1",
+        "Iops": 3000,
+        "Tags": [
+          {
+            "Key": "Owner",
+            "Value": "Haru2_freetier_iam_user"
+          },
+          {
+            "Key": "Name",
+            "Value": "codyssey-haru2-root-volume"
+          },
+          {
+            "Key": "Project",
+            "Value": "Codyssey-B3-1"
+          }
+        ],
+        "VolumeType": "gp3",
+        "MultiAttachEnabled": false,
+        "Throughput": 125,
+        "Operator": {
+          "Managed": false,
+          "HiddenByDefault": false
+        },
+        "VolumeArn": "arn:aws:ec2:ap-northeast-2:979342849963:volume/vol-045ca25bece5c5925",
+        "OwnerId": "979342849963",
+        "VolumeId": "vol-045ca25bece5c5925",
+        "Size": 8,
+        "SnapshotId": "snap-0c82e4de4f7e1b928",
+        "AvailabilityZone": "ap-northeast-2a",
+        "State": "in-use",
+        "CreateTime": "2026-10-17T08:26:22.485000+00:00",
+        "Attachments": [
+          {
+            "DeleteOnTermination": true,
+            "EbsCardIndex": 0,
+            "VolumeId": "vol-045ca25bece5c5925",
+            "InstanceId": "i-0662f24aee4fe0031",
+            "Device": "/dev/xvda",
+            "State": "attached",
+            "AttachTime": "2026-10-17T08:26:22+00:00"
+          }
+        ],
+        "Encrypted": true,
+        "KmsKeyId": "arn:aws:kms:ap-northeast-2:979342849963:key/1302c709-e796-454a-ba1d-3dc13f742b95"
+      }
+    ]
+  },
+  "describe-network-interfaces": {
+    "NetworkInterfaces": [
+      {
+        "Association": {
+          "IpOwnerId": "amazon",
+          "PublicDnsName": "",
+          "PublicIp": "3.38.165.200"
+        },
+        "Attachment": {
+          "AttachTime": "2026-10-17T08:26:21+00:00",
+          "AttachmentId": "eni-attach-0c054477078a3dd96",
+          "DeleteOnTermination": true,
+          "DeviceIndex": 0,
+          "NetworkCardIndex": 0,
+          "InstanceId": "i-0662f24aee4fe0031",
+          "InstanceOwnerId": "979342849963",
+          "Status": "attached"
+        },
+        "AvailabilityZone": "ap-northeast-2a",
+        "Description": "",
+        "Groups": [
+          {
+            "GroupId": "sg-09c2e52786f6da9a7",
+            "GroupName": "codyssey-haru2-web-sg"
+          }
+        ],
+        "InterfaceType": "interface",
+        "Ipv6Addresses": [],
+        "MacAddress": "02:ff:cb:6a:7f:0f",
+        "NetworkInterfaceId": "eni-0416504419416aafa",
+        "OwnerId": "979342849963",
+        "PublicDnsName": "",
+        "PrivateIpAddress": "10.77.1.53",
+        "PrivateIpAddresses": [
+          {
+            "Association": {
+              "IpOwnerId": "amazon",
+              "PublicDnsName": "",
+              "PublicIp": "3.38.165.200"
+            },
+            "Primary": true,
+            "PrivateIpAddress": "10.77.1.53"
+          }
+        ],
+        "RequesterManaged": false,
+        "SourceDestCheck": true,
+        "Status": "in-use",
+        "SubnetId": "subnet-07add2cd4981316fe",
+        "TagSet": [
+          {
+            "Key": "Owner",
+            "Value": "Haru2_freetier_iam_user"
+          },
+          {
+            "Key": "Project",
+            "Value": "Codyssey-B3-1"
+          },
+          {
+            "Key": "Name",
+            "Value": "codyssey-haru2-web-eni"
+          }
+        ],
+        "VpcId": "vpc-091ed4ac4c8fb0a88",
+        "Operator": {
+          "Managed": false,
+          "HiddenByDefault": false
+        },
+        "AvailabilityZoneId": "apne2-az1"
+      }
+    ]
+  },
+  "describe-key-pairs": {
+    "KeyPairs": [
+      {
+        "KeyPairId": "key-00ed92a210ea92db4",
+        "KeyType": "ed25519",
+        "Tags": [
+          {
+            "Key": "Project",
+            "Value": "Codyssey-B3-1"
+          },
+          {
+            "Key": "Owner",
+            "Value": "Haru2_freetier_iam_user"
+          },
+          {
+            "Key": "Name",
+            "Value": "codyssey-haru2-key"
+          }
+        ],
+        "CreateTime": "2026-10-17T08:25:37.335000+00:00",
+        "KeyName": "codyssey-haru2-key",
+        "KeyFingerprint": "j9Wyx5cw0kbP1s1UAhyLVOFrY99OUc9LZwLhhKE01gs="
+      }
+    ]
+  }
+}

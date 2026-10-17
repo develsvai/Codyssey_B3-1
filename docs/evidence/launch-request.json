@@ -1,0 +1,98 @@
+{
+  "ImageId": "ami-0e058fd137468076a",
+  "InstanceType": "t3.micro",
+  "MinCount": 1,
+  "MaxCount": 1,
+  "KeyName": "codyssey-haru2-key",
+  "ClientToken": "codyssey-haru2-vpc-091ed4ac4c8fb0a88",
+  "NetworkInterfaces": [
+    {
+      "DeviceIndex": 0,
+      "SubnetId": "subnet-07add2cd4981316fe",
+      "Groups": [
+        "sg-09c2e52786f6da9a7"
+      ],
+      "AssociatePublicIpAddress": true,
+      "DeleteOnTermination": true
+    }
+  ],
+  "BlockDeviceMappings": [
+    {
+      "DeviceName": "/dev/xvda",
+      "Ebs": {
+        "VolumeSize": 8,
+        "VolumeType": "gp3",
+        "Iops": 3000,
+        "Throughput": 125,
+        "DeleteOnTermination": true,
+        "Encrypted": true
+      }
+    }
+  ],
+  "CreditSpecification": {
+    "CpuCredits": "standard"
+  },
+  "Monitoring": {
+    "Enabled": false
+  },
+  "MetadataOptions": {
+    "HttpTokens": "required",
+    "HttpEndpoint": "enabled"
+  },
+  "CapacityReservationSpecification": {
+    "CapacityReservationPreference": "none"
+  },
+  "TagSpecifications": [
+    {
+      "ResourceType": "instance",
+      "Tags": [
+        {
+          "Key": "Name",
+          "Value": "codyssey-haru2-web"
+        },
+        {
+          "Key": "Project",
+          "Value": "Codyssey-B3-1"
+        },
+        {
+          "Key": "Owner",
+          "Value": "Haru2_freetier_iam_user"
+        }
+      ]
+    },
+    {
+      "ResourceType": "volume",
+      "Tags": [
+        {
+          "Key": "Name",
+          "Value": "codyssey-haru2-root-volume"
+        },
+        {
+          "Key": "Project",
+          "Value": "Codyssey-B3-1"
+        },
+        {
+          "Key": "Owner",
+          "Value": "Haru2_freetier_iam_user"
+        }
+      ]
+    },
+    {
+      "ResourceType": "network-interface",
+      "Tags": [
+        {
+          "Key": "Name",
+          "Value": "codyssey-haru2-web-eni"
+        },
+        {
+          "Key": "Project",
+          "Value": "Codyssey-B3-1"
+        },
+        {
+          "Key": "Owner",
+          "Value": "Haru2_freetier_iam_user"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "checked_at": "2026-10-17T08:36:10.657171+00:00",
+  "instance_id": "i-0662f24aee4fe0031",
+  "instance_state": "terminated",
+  "remaining_owned_resources": {
+    "Vpcs": [],
+    "Subnets": [],
+    "InternetGateways": [],
+    "RouteTables": [],
+    "SecurityGroups": [],
+    "NetworkInterfaces": [],
+    "Volumes": [],
+    "KeyPairs": [],
+    "Addresses": []
+  },
+  "active_instance_reservations": [],
+  "not_created": [
+    "Elastic IP",
+    "NAT Gateway",
+    "Load balancer",
+    "RDS"
+  ],
+  "billing_checked": false
+}

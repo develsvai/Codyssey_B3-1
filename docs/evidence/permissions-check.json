@@ -1,0 +1,186 @@
+{
+  "principal": "arn:aws:iam::979342849963:user/Haru2_freetier_iam_user",
+  "checks": [
+    {
+      "check": "describe-vpcs",
+      "status": "OK",
+      "expected": "OK",
+      "passed": true
+    },
+    {
+      "check": "describe-subnets",
+      "status": "OK",
+      "expected": "OK",
+      "passed": true
+    },
+    {
+      "check": "describe-internet-gateways",
+      "status": "OK",
+      "expected": "OK",
+      "passed": true
+    },
+    {
+      "check": "describe-route-tables",
+      "status": "OK",
+      "expected": "OK",
+      "passed": true
+    },
+    {
+      "check": "describe-security-groups",
+      "status": "OK",
+      "expected": "OK",
+      "passed": true
+    },
+    {
+      "check": "describe-security-group-rules",
+      "status": "OK",
+      "expected": "OK",
+      "passed": true
+    },
+    {
+      "check": "describe-network-acls",
+      "status": "OK",
+      "expected": "OK",
+      "passed": true
+    },
+    {
+      "check": "describe-network-interfaces",
+      "status": "OK",
+      "expected": "OK",
+      "passed": true
+    },
+    {
+      "check": "describe-instances",
+      "status": "OK",
+      "expected": "OK",
+      "passed": true
+    },
+    {
+      "check": "describe-instance-status",
+      "status": "OK",
+      "expected": "OK",
+      "passed": true
+    },
+    {
+      "check": "describe-instance-types",
+      "status": "OK",
+      "expected": "OK",
+      "passed": true
+    },
+    {
+      "check": "describe-availability-zones",
+      "status": "OK",
+      "expected": "OK",
+      "passed": true
+    },
+    {
+      "check": "describe-key-pairs",
+      "status": "OK",
+      "expected": "OK",
+      "passed": true
+    },
+    {
+      "check": "describe-volumes",
+      "status": "OK",
+      "expected": "OK",
+      "passed": true
+    },
+    {
+      "check": "describe-tags",
+      "status": "OK",
+      "expected": "OK",
+      "passed": true
+    },
+    {
+      "check": "describe-addresses",
+      "status": "OK",
+      "expected": "OK",
+      "passed": true
+    },
+    {
+      "check": "describe-account-attributes",
+      "status": "OK",
+      "expected": "OK",
+      "passed": true
+    },
+    {
+      "check": "describe-dhcp-options",
+      "status": "OK",
+      "expected": "OK",
+      "passed": true
+    },
+    {
+      "check": "describe-vpc-block-public-access-options",
+      "status": "OK",
+      "expected": "OK",
+      "passed": true
+    },
+    {
+      "check": "describe-vpc-block-public-access-exclusions",
+      "status": "OK",
+      "expected": "OK",
+      "passed": true,
+      "initial_request_status": "MissingParameter",
+      "request_correction": "Added MaxResults and project tag filter"
+    },
+    {
+      "check": "describe-images",
+      "status": "OK",
+      "expected": "OK",
+      "passed": true
+    },
+    {
+      "check": "create-vpc-with-required-tags",
+      "status": "DryRunOperation",
+      "expected": "DryRunOperation",
+      "passed": true
+    },
+    {
+      "check": "create-internet-gateway-with-required-tags",
+      "status": "DryRunOperation",
+      "expected": "DryRunOperation",
+      "passed": true
+    },
+    {
+      "check": "reject-vpc-without-tags",
+      "status": "UnauthorizedOperation",
+      "expected": "UnauthorizedOperation",
+      "passed": true
+    },
+    {
+      "check": "reject-vpc-with-wrong-owner",
+      "status": "UnauthorizedOperation",
+      "expected": "UnauthorizedOperation",
+      "passed": true
+    },
+    {
+      "check": "reject-vpc-outside-seoul",
+      "status": "UnauthorizedOperation",
+      "expected": "UnauthorizedOperation",
+      "passed": true
+    },
+    {
+      "check": "reject-direct-volume-creation",
+      "status": "UnauthorizedOperation",
+      "expected": "UnauthorizedOperation",
+      "passed": true
+    },
+    {
+      "check": "import-key-pair-with-required-tags",
+      "status": "DryRunOperation",
+      "expected": "DryRunOperation",
+      "passed": true
+    }
+  ],
+  "owned_resource_counts": {
+    "Vpcs": 0,
+    "Subnets": 0,
+    "InternetGateways": 0,
+    "RouteTables": 0,
+    "SecurityGroups": 0,
+    "NetworkInterfaces": 0,
+    "KeyPairs": 0,
+    "Volumes": 0
+  },
+  "actual_mutations": 0
+}

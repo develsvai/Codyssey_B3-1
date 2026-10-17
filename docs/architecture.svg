@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1040" viewBox="0 0 1500 1040">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#087e8b"/></marker><style>text{font-family:Arial,sans-serif;fill:#152c40}.title{font-size:36px;font-weight:700}.h{font-size:23px;font-weight:700}.t{font-size:18px}.s{font-size:15px;fill:#4e6476}.code{font-family:Menlo,monospace;font-size:15px}.line{fill:none;stroke:#087e8b;stroke-width:3;marker-end:url(#arrow)}.box{fill:white;stroke:#b2c7d5;stroke-width:2}</style></defs>
+<rect width="1500" height="1040" fill="#f5f8fb"/>
+<text x="55" y="65" class="title">Haru2 Cloud Lab / AWS Architecture</text><text x="55" y="100" class="t">Codyssey B3-1 · Deployed in Seoul (ap-northeast-2) · Snapshot before cleanup</text>
+<rect x="370" y="150" width="1075" height="630" rx="24" fill="#edf5ff" stroke="#5d8bbd" stroke-width="2"/>
+<text x="400" y="190" class="h">VPC · 10.77.0.0/16</text><text x="400" y="220" class="code">vpc-091ed4ac4c8fb0a88</text>
+<rect x="680" y="260" width="720" height="340" rx="20" fill="#e9f8f2" stroke="#66a88c" stroke-width="2"/>
+<text x="705" y="295" class="h">Public subnet · 10.77.1.0/24</text><text x="705" y="322" class="s">ap-northeast-2a · subnet-07add2cd4981316fe</text>
+<rect x="725" y="348" width="630" height="220" rx="16" fill="#fff9ed" stroke="#d5a148" stroke-width="2" stroke-dasharray="8 5"/>
+<text x="750" y="380" class="t">Security group · codyssey-haru2-web-sg</text>
+<rect x="875" y="405" width="440" height="105" rx="12" fill="#fff" stroke="#dc9e50" stroke-width="2"/>
+<text x="900" y="439" class="h">EC2 · t3.micro · Nginx</text><text x="900" y="466" class="s">Amazon Linux 2023 · encrypted gp3 8 GiB</text><text x="900" y="492" class="code">Private IP: 10.77.1.53</text>
+<text x="750" y="544" class="s">Inbound: TCP 80 from 0.0.0.0/0 · TCP 22 from learner IP /32</text>
+<rect x="45" y="375" width="270" height="155" rx="16" class="box"/>
+<text x="70" y="411" class="h">Internet client</text><text x="70" y="443" class="t">Browser / curl</text><text x="70" y="476" class="s">GET / or GET /health</text><text x="70" y="504" class="s">Response: HTTP 200</text>
+<rect x="425" y="375" width="210" height="155" rx="16" class="box"/>
+<text x="450" y="411" class="h">Internet</text><text x="450" y="440" class="h">gateway</text><text x="450" y="475" class="s">Attached to VPC</text><text x="450" y="503" class="s">Public IPv4 access</text>
+<path d="M315 455H425" class="line"/><path d="M635 455H875" class="line"/>
+<text x="655" y="435" class="s">HTTP :80</text>
+<text x="50" y="575" class="t">Public IP: 3.38.165.200</text><text x="50" y="607" class="s">Auto-assigned IPv4 (not Elastic IP)</text>
+<rect x="680" y="640" width="720" height="105" rx="14" class="box"/>
+<text x="705" y="675" class="h">Subnet route table</text><text x="705" y="706" class="code">10.77.0.0/16 → local     |     0.0.0.0/0 → IGW</text><text x="705" y="730" class="s">rtb-0fa8b7b667a2c6fee</text>
+<path d="M1040 640V603" stroke="#66a88c" stroke-width="2" stroke-dasharray="6 5" fill="none"/>
+<text x="1080" y="625" class="s">Associated with subnet</text>
+<rect x="45" y="825" width="660" height="150" rx="16" class="box"/><text x="70" y="863" class="h">Management access</text><text x="70" y="896" class="t">Local Mac → SSH / TCP 22 → EC2</text><text x="70" y="927" class="s">SSH source is restricted to the learner's public IPv4 /32.</text><text x="70" y="953" class="s">The private SSH key remains on the learner's Mac.</text>
+<rect x="735" y="825" width="710" height="150" rx="16" class="box"/><text x="760" y="863" class="h">AWS API permissions</text><text x="760" y="896" class="t">IAM user: Haru2_freetier_iam_user</text><text x="760" y="927" class="s">Project + Owner tags limit which lab resources can be changed.</text><text x="760" y="953" class="s">IAM controls AWS operations; the security group controls network traffic.</text>
+<text x="55" y="1015" class="s">External HTTP and outbound HTTPS connectivity verified on 2026-10-17. IDs represent the deployed lab before cleanup.</text>
+</svg>

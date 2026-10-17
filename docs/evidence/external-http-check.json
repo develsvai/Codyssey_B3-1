@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-10-17T08:29:51.432Z",
+  "source": "Local Mac browser over public internet",
+  "homepage": {
+    "url": "http://3.38.165.200/",
+    "status": 200,
+    "title": "Haru2 Cloud Lab"
+  },
+  "health": {
+    "url": "http://3.38.165.200/health",
+    "status": 200,
+    "body": "ok\n"
+  }
+}
